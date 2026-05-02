@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UnityIDE — The sovereign, security-first cloud IDE. Zero-knowledge encryption, isolated contexts, native performance." />
+  <title>UnityIDE — Your Code. Untouchable.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-bar"></div>
+
+  <!-- THREE.JS Canvas (background layer) -->
+  <canvas id="c"></canvas>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="glass-nav">
+    <a href="#hero" class="nav-brand">
+      <div class="nav-brand-icon">U/</div>
+      <span class="nav-brand-name">UnityIDE</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#vault">Vault</a></li>
+      <li><a href="#vision">Collab</a></li>
+      <li><a href="#vault">Access</a></li>
+    </ul>
+
+    <div class="nav-ctas">
+      <a href="#" class="btn btn-outline">Login</a>
+      <a href="#" class="btn btn-primary">
+        Deploy Now <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE SCROLL WRAPPER ===================== -->
+  <div class="page-scroll">
+
+    <!-- =================== HERO =================== -->
+    <section class="hero section-panel" id="hero">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="dot"></span>
+          v2.0 Encryption Active
+        </div>
+
+        <h1>Your Code.<br /><span class="accent">Untouchable.</span></h1>
+
+        <p class="hero-sub">
+          The first IDE engineered from the ground up for sovereign development.
+          End-to-end encrypted workspaces, isolated execution contexts, and
+          zero-knowledge architecture — because your code belongs to you.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-terminal"></i>
+            Initialize Project
+          </a>
+          <a href="#" class="btn btn-ghost btn-lg">
+            <i class="fa-solid fa-play" style="font-size:12px;"></i>
+            Watch the Demo
+          </a>
+        </div>
+
+        <!-- Terminal Card -->
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">unity — bash — 80×24</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-cmd">unity init sovereign-workspace</span>
+            </div>
+            <div class="terminal-line terminal-out">
+              <span><span class="ok">✓</span> <span class="info">Generating</span> E2E keypair (Curve25519)...</span>
+            </div>
+            <div class="terminal-line terminal-out">
+              <span><span class="ok">✓</span> <span class="info">Provisioning</span> isolated sandbox (eBPF)...</span>
+            </div>
+            <div class="terminal-line terminal-out">
+              <span><span class="ok">✓</span> Vault locked — zero-knowledge ready</span>
+            </div>
+            <div class="terminal-line" style="margin-top:8px;">
+              <span class="terminal-prompt">$</span>
+              <span id="typed-cmd"></span><span class="cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== FEATURES / VISION =================== -->
+    <section class="features section-panel" id="vision">
+      <div class="section-label">Core Architecture</div>
+      <h2 class="section-heading">Engineered for <span class="accent">Sovereignty</span></h2>
+      <p class="section-sub">
+        Every layer of UnityIDE is built around one principle: your source code
+        never leaves your control. Not even we can read it.
+      </p>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="glass-card">
+          <div class="card-icon blue">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Isolated Contexts</h3>
+          <p>
+            Every project runs in a hardware-isolated eBPF sandbox. No shared
+            memory, no cross-project leakage. Each context is cryptographically
+            attested at boot.
+          </p>
+          <div class="card-tag">
+            <i class="fa-solid fa-circle" style="font-size:6px; color: var(--green);"></i>
+            ebpf_sandbox::v3
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card">
+          <div class="card-icon purple">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3>Native Performance</h3>
+          <p>
+            WASM-compiled toolchains run at near-native speed. LSP responses
+            under 8ms, builds without container overhead, hot-reload in
+            milliseconds.
+          </p>
+          <div class="card-tag">
+            <i class="fa-solid fa-circle" style="font-size:6px; color: var(--green);"></i>
+            wasm_runtime::v2
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card">
+          <div class="card-icon green">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <h3>Zero-Knowledge</h3>
+          <p>
+            AES-256-GCM per-file encryption with keys derived from your
+            passphrase using Argon2id. Servers store only ciphertext —
+            mathematically incapable of reading your code.
+          </p>
+          <div class="card-tag">
+            <i class="fa-solid fa-circle" style="font-size:6px; color: var(--green);"></i>
+            zk_vault::argon2id
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== VAULT =================== -->
+    <section class="vault-sec section-panel" id="vault">
+      <div class="vault-layout">
+        <!-- Left: Text -->
+        <div>
+          <div class="section-label">Security Layer</div>
+          <h2 class="section-heading">The Vault <span class="accent">Architecture</span></h2>
+          <p class="section-sub" style="margin-bottom: 0;">
+            Three hardened layers between your code and the outside world.
+            Built on proven cryptographic primitives, not security theater.
+          </p>
+
+          <ul class="vault-list">
+            <li class="vault-item">
+              <div class="vault-item-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <div class="vault-item-body">
+                <h4>Per-File Encryption</h4>
+                <p>Every file gets a unique AES-256-GCM key. Compromise one key and only that file is exposed — never your entire workspace.</p>
+              </div>
+            </li>
+            <li class="vault-item">
+              <div class="vault-item-icon">
+                <i class="fa-solid fa-ghost"></i>
+              </div>
+              <div class="vault-item-body">
+                <h4>Ephemeral Environments</h4>
+                <p>Build and run environments are spun up fresh for every session and destroyed completely on exit. No persistent footprint.</p>
+              </div>
+            </li>
+            <li class="vault-item">
+              <div class="vault-item-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="vault-item-body">
+                <h4>Forensic Audit Logs</h4>
+                <p>Immutable, tamper-evident logs of every file access, build event, and network call. Cryptographically signed by the runtime.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Animated Vault Visual (HTML only — Three.js also renders here in 3D) -->
+        <div class="vault-visual">
+          <div class="vault-panel">
+            <div class="vault-ring"></div>
+            <div class="vault-ring"></div>
+            <div class="vault-ring"></div>
+            <div class="vault-core-circle">
+              <i class="fa-solid fa-vault"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="minimal-footer" id="footer">
+      <a href="#hero" class="footer-brand">
+        <div class="footer-brand-icon">U/</div>
+        <span class="footer-brand-name">UnityIDE</span>
+      </a>
+
+      <ul class="footer-links">
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#vault">Vault</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Status</a></li>
+      </ul>
+
+      <div class="footer-social">
+        <a href="#" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" aria-label="Twitter / X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="#" aria-label="Discord">
+          <i class="fa-brands fa-discord"></i>
+        </a>
+      </div>
+
+      <p class="footer-copy">© 2026 Sovereign Systems Inc. All rights reserved.</p>
+    </footer>
+
+  </div><!-- /.page-scroll -->
+
+  <!-- Three.js CDN (UMD, no ES modules) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
