@@ -1,11 +1,10 @@
-import { OrbitControls, Stars, Float, PerspectiveCamera } from '@react-three/drei'
+import { OrbitControls, Stars, Float } from '@react-three/drei'
 import { VaultCore } from './VaultCore'
 import { FloatingCode } from './FloatingCode'
 
 export function Experience() {
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 0, 10]} />
       <OrbitControls 
         enableZoom={false} 
         enablePan={false}

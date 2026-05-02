@@ -81,6 +81,10 @@ export function UIOverlay() {
           color: white;
         }
 
+        .header, .hero-content, .cta-group, .stats {
+          pointer-events: auto;
+        }
+
         .header {
           display: flex;
           justify-content: space-between;
