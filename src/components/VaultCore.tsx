@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { MeshDistortMaterial, Sphere, Octahedron } from '@react-three/drei'
+import { Sphere, Octahedron } from '@react-three/drei'
 import * as THREE from 'three'
 
 export function VaultCore() {
@@ -18,14 +18,11 @@ export function VaultCore() {
     <group>
       {/* Outer Shield */}
       <Octahedron ref={meshRef} args={[1, 0]} scale={2}>
-        <MeshDistortMaterial
+        <meshStandardMaterial
           color="#00f2ff"
-          speed={2}
-          distort={0.4}
-          radius={1}
-          opacity={0.2}
-          transparent
           wireframe
+          transparent
+          opacity={0.3}
         />
       </Octahedron>
 
